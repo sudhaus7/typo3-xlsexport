@@ -11,7 +11,6 @@ define(['jquery','TYPO3/CMS/Backend/Utility'],function($,Icons) {
 	};
 	
 	Xlsexport.initializeEvents = function() {
-		alert("huhu");
 	};
 	
 	Xlsexport.workIndexer = function (ajaxUrl) {

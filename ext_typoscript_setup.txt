@@ -1,7 +1,0 @@
-module.tx_sudhaus7xlsexport {
-	view {
-		layoutRootPaths.10 = EXT:sudhaus7_xlsexport/Resources/Private/Layouts/
-		partialRootPaths.10 = EXT:sudhaus7_xlsexport/Resources/Private/Partials/
-		templateRootPaths.10 = EXT:sudhaus7_xlsexport/Resources/Private/Templates/
-	}
-}

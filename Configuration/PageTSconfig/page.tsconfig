@@ -1,4 +1,4 @@
-mod.tx_sudhaus7xlsexport {
+mod.tx_xlsexport {
     settings {
         exports {
             tt_address {

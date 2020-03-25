@@ -1,9 +1,9 @@
 {
-  "name": "SUDHAUS7/sudhaus7-xlsexport",
+  "name": "sudhaus7/xlsexport",
   "description": "(Sudhaus7) XLS-Exporter",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "type": "typo3-cms-extension",
-  "license": "",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Frank Berger",
@@ -14,16 +14,36 @@
       "role": "Developer"
     }
   ],
-  "replace": {
-    "sudhaus7_xlsexport": "self.version"
-  },
   "require": {
-    "typo3/cms-core": ">=8.0,<10.0",
-    "phpoffice/phpspreadsheet": "~1.0"
+    "typo3/cms-core": "^8.7 || ^9.5 || ^10.3",
+    "phpoffice/phpspreadsheet": "^1.10"
+  },
+  "require-dev": {
+    "typo3/cms-fluid-styled-content": "^10.3",
+    "typo3/cms-tstemplate": "^10.3",
+    "typo3/cms-backend": "^10.3",
+    "phpstan/phpstan": "^0.11",
+    "codeception/codeception": "^3.1",
+    "codeception/phpbuiltinserver": "^1.5",
+    "helhum/typo3-console": "v6.0.0-alpha2",
+    "friendsoftypo3/tt-address": "^5"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "xlsimport",
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/public"
+    }
   },
   "autoload": {
     "psr-4": {
-      "SUDHAUS7\\Sudhaus7Xlsexport\\": "Classes/"
+      "SUDHAUS7\\Xlsexport\\": "Classes/"
     }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/public/typo3conf/ext/",
+      "[ -L .Build/public/typo3conf/ext/xlsexport ] || ln -snvf ../../../../. .Build/public/typo3conf/ext/xlsexport"
+    ]
   }
 }

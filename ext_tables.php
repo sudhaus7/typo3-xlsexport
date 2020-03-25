@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
@@ -6,20 +7,21 @@ if (!defined('TYPO3_MODE')) {
 
 // Backend Modules
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-    'SUDHAUS7.' . $_EXTKEY,
+    'SUDHAUS7.xlsexport',
     'web',
     'xlsexport',
     '',
-    array('Xlsexport' => 'index, export'),
-    array(
+    [
+        'Xlsexport' => 'index, export'
+    ],
+    [
         'access' => 'user,group',
-        'icon'   => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/xls-exporter.png',
-        'labels' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xlf',
-    )
+        'icon'   => 'EXT:xlsexport/Resources/Public/Icons/xlsdown.svg',
+        'labels' => 'LLL:EXT:xlsexport/Resources/Private/Language/locallang_db.xlf',
+    ]
 );
 
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'SUDHAUS7 Xlsexport');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:sudhaus7_xlsexport/Configuration/PageTSconfig/page.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:xlsexport/Configuration/PageTSconfig/page.ts">
 ');
